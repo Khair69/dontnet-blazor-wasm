@@ -1,0 +1,51 @@
+﻿@page "/Inventory"
+@using dontnet_blazor_wasm_part2.Data
+
+<PageTitle>Inventory</PageTitle>
+
+<h1>Inventory</h1>
+
+<select @bind="@SelectedManId" @bind:event="oninput" @onchange="HandleSelection">
+    @foreach (var com in DB.Companies)
+    {
+        <option value="@com.ManufactureId">@com.Name</option>
+    }
+</select>
+
+@if (Cars.Count == 0)
+{
+    <h5>please select a car manufacture to list all available cars.</h5>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var car in Cars)
+            {
+                <tr>
+                    <td>@car.Name</td>
+                    <td>@car.CarId</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@code {
+    public Database DB = new Database();
+    public List<Models.Car> Cars = new List<Models.Car>();
+
+    public int SelectedManId { get; set; }
+
+    public void HandleSelection()
+    {
+        Cars = DB.GetCarsByManufactureId(SelectedManId);
+    }
+}
