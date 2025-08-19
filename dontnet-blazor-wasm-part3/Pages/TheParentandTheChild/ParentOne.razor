@@ -1,0 +1,81 @@
+﻿@page "/ParentOne"
+
+
+<h3>ParentOne</h3>
+<div class="row">
+    <!--Child One-->
+    <div class="w-50 p-2" style="border:solid 1px #f39c12;">
+        <input @bind-value="Mess2ChildOne" @bind-value:event="oninput" placeholder="type something to update ChildOne" class="w-100 form-control" />
+        <ChildOne MessFromP="@Mess2ChildOne" BorderCol="@ChildOneCol"></ChildOne>
+        <label class="form-label">Border Color</label>
+        <select @bind="ChildOneCol" class="form-control">
+            <option value="red">Red</option>
+            <option value="deepskyblue">Blue</option>
+            <option value="black">Black</option>
+            <option value="greenyellow">Green</option>
+        </select>
+    </div>
+    <!--Child Two-->
+    <div class="w-50 p-2" style="border:solid 1px #f39c12;">
+        <p>here you can add attributes to the child's div strait from the parent</p>
+        <button @onclick="AddNewRow" class="btn btn-outline-primary mb-2">
+            <i class="bi bi-plus"></i>
+        </button>
+
+        @foreach (var row in AttRows)
+        {
+            <div class="row mb-2">
+                <div class="col">
+                    <input type="text" class="form-control" @bind="row.Key" placeholder="Attribute Name" />
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" @bind="row.Value" placeholder="Value" />
+                </div>
+            </div>
+        }
+
+        <button @onclick="UpdateDiv" class="btn btn-outline-success mx-1 mb-2">Update</button>
+
+        <ChildTwo CatAttributes="@AttDic"></ChildTwo>
+    </div>
+</div>
+
+@code {
+    //Child One Stuff
+    private string Mess2ChildOne { get; set; } = "";
+    private string ChildOneCol { get; set; } = "red";
+
+    //Child Two Stuff
+    public class KvP
+    {
+        public string Key { get; set; } = "";
+        public string Value { get; set; } = "";
+    }
+    private List<KvP> AttRows { get; set; } = new();
+
+    private void AddNewRow()
+    {
+        AttRows.Add(new KvP());
+    }
+
+    private Dictionary<string, object> AttDic { get; set; } = new();
+
+    public ParentOne()
+    {
+        AttDic.Add("style", "border:dotted 2px cyan;");
+        AttRows.Add(new KvP
+        {
+            Key = "style",
+            Value = "border:dotted 2px cyan;"
+        });
+    }
+
+    private void UpdateDiv()
+    {
+        AttDic = new();
+        foreach (var i in AttRows)
+        {
+            AttDic.Add(i.Key, i.Value);
+        }
+    }
+}

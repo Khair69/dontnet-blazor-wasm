@@ -1,0 +1,34 @@
+﻿@page "/"
+
+<PageTitle>Part Three</PageTitle>
+
+<h1>Part Three</h1>
+<ul style="list-style-type:square;">
+    <li>
+        <h3>Spliting razor components to two files (HTML and C#)</h3>
+        <p>
+            to split the component you need to create a partial class in the same directory as the component and name it COMPONENTNAME.razor.cs. 
+        </p>
+    </li>
+    <li>
+        <h3>Get data from the route (URL)</h3>
+        <p>
+            at the top of the component place @@page "/PageName/{PropertyName}"
+            in the C# create a public property with the same name (not case-sensitive) and with the attribute [Parameter] <br />
+            To test go to /Car/Info/{id}/{Model}
+        </p>
+    </li>
+    <li>
+        <h3>Pass data from component to component (from parent to child component)</h3>
+        <p>
+            you can define a public property and decorate it with [Parameter], then it can be used in a parent component as a regular html attribute.
+        </p>
+    </li>
+    <li>
+        <h3>Pass a bunch of data from parent to child</h3>
+        <p>
+            adding [Parameter(CaptureUnmatchedValues = true)] to a Dictionary&lt;string, object> Will make it take any attributes passed from the parent and are not defined as prameteres in the child component. Then you can you use the dictionary in the child component to add attributes to any tag by adding @@attributes="dictionaryName"
+        </p>
+    </li>
+
+</ul>

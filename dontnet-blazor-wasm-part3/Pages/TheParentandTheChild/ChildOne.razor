@@ -1,0 +1,12 @@
+﻿<div style="border:dashed 2px @BorderCol" class="p-3 m-2">
+    <h3>ChildOne</h3>
+    <i>@MessFromP</i>
+</div>
+
+@code {
+    [Parameter]
+    public string MessFromP { get; set; } = "";
+
+    [Parameter]
+    public string BorderCol { get; set; } = "red";
+}

@@ -1,0 +1,10 @@
+﻿
+
+<div @attributes="CatAttributes">
+    <h3>ChildTwo</h3>
+</div>
+
+@code {
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> CatAttributes { get; set; } = new();
+}
