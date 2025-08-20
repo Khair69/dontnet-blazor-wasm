@@ -1,0 +1,14 @@
+﻿<div style="border:groove 3px red" class="p-3 m-2">
+    <h3>Nino</h3>
+    <input @oninput="SendMessage"/>
+</div>
+
+@code {
+    [Parameter]
+    public EventCallback<string> MessageEvent { get; set; }
+
+    public void SendMessage(ChangeEventArgs e)
+    {
+        MessageEvent.InvokeAsync((e.Value).ToString());
+    }
+}

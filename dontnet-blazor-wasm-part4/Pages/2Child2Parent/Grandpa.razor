@@ -1,0 +1,13 @@
+﻿@page "/Big"
+
+<div class="ready">
+    <h3>Grandpa</h3>
+    <input @bind-value="Mess4u" @bind-value:event="oninput" class="form-control" placeholder="Input a message to send to grandchild using a cascading parameter"/>
+    <CascadingValue Name="Mess" Value="Mess4u"> 
+        <Dad></Dad>
+    </CascadingValue>
+</div>
+
+@code {
+    public string Mess4u { get; set; } = "";
+}

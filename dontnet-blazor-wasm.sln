@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dontnet-blazor-wasm-part2",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dontnet-blazor-wasm-part3", "dontnet-blazor-wasm-part3\dontnet-blazor-wasm-part3.csproj", "{09E1A06B-9AE0-4B64-913E-C3C89B743C26}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dontnet-blazor-wasm-part4", "dontnet-blazor-wasm-part4\dontnet-blazor-wasm-part4.csproj", "{F7CC2E2D-326C-447D-822E-F13C927050BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{09E1A06B-9AE0-4B64-913E-C3C89B743C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09E1A06B-9AE0-4B64-913E-C3C89B743C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09E1A06B-9AE0-4B64-913E-C3C89B743C26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7CC2E2D-326C-447D-822E-F13C927050BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7CC2E2D-326C-447D-822E-F13C927050BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7CC2E2D-326C-447D-822E-F13C927050BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7CC2E2D-326C-447D-822E-F13C927050BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

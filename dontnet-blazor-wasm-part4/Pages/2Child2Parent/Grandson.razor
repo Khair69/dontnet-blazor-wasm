@@ -1,0 +1,9 @@
+﻿<div class="ready">
+    <h3>Grandson</h3>
+    <b>@Mess</b>
+</div>
+
+@code {
+    [CascadingParameter(Name = nameof(Mess))]
+    public string Mess { get; set; } = "";
+}

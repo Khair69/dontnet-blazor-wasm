@@ -1,0 +1,13 @@
+﻿@page "/Papa"
+
+<h3>Papa</h3>
+<Nino MessageEvent="RecieveMessage"></Nino>
+<b>Message from Nino: @Message</b>
+
+@code {
+    public string Message { get; set; }
+    void RecieveMessage(string message)
+    {
+        Message = message;
+    }
+}

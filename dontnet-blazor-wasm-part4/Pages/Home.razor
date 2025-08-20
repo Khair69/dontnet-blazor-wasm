@@ -1,0 +1,61 @@
+﻿@page "/"
+
+<PageTitle>Part Four</PageTitle>
+
+<h1>Part Four</h1>
+
+<ul style="list-style-type:square;">
+    <li>
+        <h3>Cascading Parameters</h3>
+        <p>
+            you can make a child component catch a parameter from any level of components up. <br />
+            In the child component add [CascadingParameter(Name = nameof(prop))] to any property and now a parent or grandparent or any level up of component can pass a value for this parameter just use <br />
+            &lt;CascadingValue Name="nameoftheparam" Value=""> &lt;Component>&lt;/Component> &lt;/CascadingValue> <br />
+            <i>note: the component is containing teh CascadingParameter or containing the component that contains it.</i> <br />
+            <i>note: in the example provided if per say the Grandpa passed the value to the Grandson and someone below the Grandpa also passed it the value will be the closest one so anyone below the Grandpa.</i>
+        </p>
+    </li>
+    <li>
+        <h3>Child to Parent</h3>
+        <p>
+            you can fire an event and send data from a child to a parent component. <br />
+            In the child component add a property of type EventCallback&lt;> and you can type the generic type you want to send to the parent, don't forget to make this property a parameter with [Parameter]. <br />
+            In the parent component you can assign the EventCallback to a method and recieve the data. <br />
+            The event fires when the child calles EventCallbackName.InvokeAsync(data);
+        </p>
+    </li>
+    <li>
+        <h3>Lifetime of a Blazor Component</h3>
+        <table class="table table-hover table-striped table-success">
+            <thead>
+                <tr>
+                    <th>Lifetime</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Scoped</td>
+                    <td>typically lives for the lifetime of a single component or, in some cases, the entire app if you register it at the app level.</td>
+                </tr>
+                <tr>
+                    <td>Transient</td>
+                    <td>is created each time it's requested.</td>
+                </tr>
+                <tr>
+                    <td>Singleton</td>
+                    <td>is created once and lives for the entire duration of the app.</td>
+                </tr>
+            </tbody>
+        </table>
+        <i>even though it's a single-page application, each component is still instantiated when you navigate to it. By default, Blazor will create a new instance of the component each time you navigate to that route. This means that any local state that you had in that component will be reset when you return to that page because it’s essentially a new instance.</i>
+    </li>
+    <li>
+        <h3>Dependency Injection</h3>
+        <p>
+            it's the same as ASP.NET <b>BUT</b> keep in mind the lifecycle of the Blazor Component, so to avoid complicationg matters the only thing to keep in mind is that when you want to use parameter after binding (from the route for example) and maybe use the values in a service, you have to override OnInitialized. <br />
+            To test DI navigate to /Carinfo/{id} <a href="Carinfo/6">like 6 for example</a>
+        </p>
+    </li>
+
+</ul>

@@ -1,0 +1,12 @@
+﻿@page "/CarInfo/{id:int}"
+
+<h3>CarInfo</h3>
+@if(Car == null)
+{
+    <h4>A car with the id @Id is not found, maybe you entered the wrong id.</h4>
+}
+else
+{   
+    <h4>The car with the id @Car.CarId is a @Car.Name</h4>
+}
+
