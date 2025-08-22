@@ -9,8 +9,8 @@
         <h3>Cascading Parameters</h3>
         <p>
             you can make a child component catch a parameter from any level of components up. <br />
-            In the child component add [CascadingParameter(Name = nameof(prop))] to any property and now a parent or grandparent or any level up of component can pass a value for this parameter just use <br />
-            &lt;CascadingValue Name="nameoftheparam" Value=""> &lt;Component>&lt;/Component> &lt;/CascadingValue> <br />
+            In the child component add <code>[CascadingParameter(Name = nameof(prop))]</code> to any property and now a parent or grandparent or any level up of component can pass a value for this parameter just use <br />
+            <code>&lt;CascadingValue Name="nameoftheparam" Value=""> &lt;Component>&lt;/Component> &lt;/CascadingValue></code> <br />
             <i>note: the component is containing teh CascadingParameter or containing the component that contains it.</i> <br />
             <i>note: in the example provided if per say the Grandpa passed the value to the Grandson and someone below the Grandpa also passed it the value will be the closest one so anyone below the Grandpa.</i>
         </p>
@@ -19,9 +19,9 @@
         <h3>Child to Parent</h3>
         <p>
             you can fire an event and send data from a child to a parent component. <br />
-            In the child component add a property of type EventCallback&lt;> and you can type the generic type you want to send to the parent, don't forget to make this property a parameter with [Parameter]. <br />
+            In the child component add a property of type <code>EventCallback&lt;></code> and you can type the generic type you want to send to the parent, don't forget to make this property a parameter with <code>[Parameter]</code>. <br />
             In the parent component you can assign the EventCallback to a method and recieve the data. <br />
-            The event fires when the child calles EventCallbackName.InvokeAsync(data);
+            The event fires when the child calles <code>EventCallbackName.InvokeAsync(data);</code>
         </p>
     </li>
     <li>

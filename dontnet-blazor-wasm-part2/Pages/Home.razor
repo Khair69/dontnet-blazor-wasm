@@ -6,14 +6,14 @@
 
 <p class="fs-5">
     In Blazor to communicate between C# and HTML, there is the concept of binding. <br />
-    One way binding is when a public property in C# is called to be viewed in HTML like this @@PropertyName. <br />
+    One way binding is when a public property in C# is called to be viewed in HTML like this <code>@@PropertyName</code>. <br />
     when the value of the property changes in C# it automatically updates in HTML. <br />
     Two way binding adds to one way binding where if you update the value in HTML (using an input tag fro example), it automatically updates the C# property. <br />
     <h3>Syntax</h3>
     <ul class="fs-5">
-        <li>@@bind (best for select tag)</li>
-        <li>@@bind-value (best for input tag)</li>
-        <li>@@bind:event="onEVENT" OR @@bind-value:event="onEVENT"</li>
-        <li>@@onEVENT="delegate"</li>
+        <li><code>@@bind</code> (best for select tag)</li>
+        <li><code>@@bind-value</code> (best for input tag)</li>
+        <li><code>@@bind:event="onEVENT"</code> OR <code>@@bind-value:event="onEVENT"</code></li>
+        <li><code>@@onEVENT="delegate"</code></li>
     </ul>
 </p>

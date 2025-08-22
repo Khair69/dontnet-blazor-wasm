@@ -6,7 +6,37 @@
 
 <p>
     a blazor app starts from the index.html in the wwwroot folder. <br />
-    in the program.cs file builder.RootComponents.Add&lt;App>("#app"); <br />
+    in the program.cs file <code>builder.RootComponents.Add&lt;App>("#app");</code> <br />
     which calls App.razor (routing component) <br />
     then it calls the layout and puts the selected page in it.
+
+    <h3>Table of Content</h3>
+    <ul class="fs-4">
+        <li>Part One -- <i>WE ARE HERE</i></li>
+        <li>Part Two -- One way and two way binding</li>
+        <li>
+            Part Three
+            <ul style="list-style:square;">
+                <li>Spliting razor components to two files (HTML and C#)</li>
+                <li>Get data from the route (URL)</li>
+                <li>Pass data from component to component (from parent to child component)</li>
+                <li>Pass a bunch of data from parent to child (capture unmatched values)</li>
+            </ul>
+        </li>
+        <li>Part Four 
+            <ul style="list-style:square;">
+                <li>Cascading Parameters</li>
+                <li>Child to Parent (comunication)</li>
+                <li>Lifetime of a Blazor Component</li>
+                <li>Dependency Injection</li>
+            </ul>
+        </li>
+        <li>Part Five -- <i>Forms in Blazor</i></li>
+    </ul>
 </p>
+
+<style>
+    ul ul li::marker {
+        color: yellowgreen;
+    }
+</style>
