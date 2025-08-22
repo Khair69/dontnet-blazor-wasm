@@ -1,0 +1,20 @@
+﻿@page "/EditCar/{id:int}"
+
+<h3>Edit Car</h3>
+
+<EditForm Model="ExistingCar" OnSubmit="UpdateCar">
+    <div class="form-floating mb-3">
+        <InputText @bind-Value="ExistingCar.Name" class="form-control"></InputText>
+        <label class="form-label">Model Name</label>
+    </div>
+    <div class="form-floating mb-3">
+        <InputSelect @bind-Value="ExistingCar.ManufactureId" class="form-select">
+            @foreach (var com in CarCompanies)
+            {
+                <option value="@com.ManufactureId">@com.Name</option>
+            }
+        </InputSelect>
+        <label class="control-label">Manufacture</label>
+    </div>
+    <button type="submit" class="btn btn-outline-success w-100 btn-lg">Update</button>
+</EditForm>

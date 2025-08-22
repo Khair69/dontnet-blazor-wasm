@@ -1,0 +1,24 @@
+﻿@page "/AllCars"
+
+<h3>All Cars</h3>
+
+<table class="table table-hover table-secondary table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Manufacture</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in Cars)
+        {
+            <tr>
+                <td>@car.CarId</td>
+                <td>@car.Manufacture</td>
+                <td>@car.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

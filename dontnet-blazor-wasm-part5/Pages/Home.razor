@@ -1,0 +1,68 @@
+﻿@page "/"
+
+<PageTitle>Part Five</PageTitle>
+
+<h1>Part Five</h1>
+
+<ul style="list-style-type:square;">
+    <li>
+        <h3>Forms</h3>
+        <p>
+            The Blazor framework supports forms and provides built-in input components.<br />
+            Instead of using plain forms in Blazor apps, a form is typically defined with Blazor's built-in form support using the framework's EditForm component.<br />
+            The Syntax: <code>&lt;EditFrom Model="theModel" OnSubmit="theActionWhenSubmittingTheFrom"></code> <br />
+            The Blazor framework provides built-in input components to receive and validate user input. The built-in input components in the following table are supported in an EditForm Component. <br />
+        </p>
+        <table class="table table-striped table-secondary table-hover">
+            <thead>
+                <tr>
+                    <th>Input component</th>
+                    <th>Rendered as...</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>InputCheckbox</td>
+                    <td><code>&lt;input type="checkbox"&gt;</code></td>
+                </tr>
+                <tr>
+                    <td>InputDate&lt;TValue&gt;</td>
+                    <td><code>&lt;input type="date"&gt;</code></td>
+                </tr>
+                <tr>
+                    <td>InputFile</td>
+                    <td><code>&lt;input type="file"&gt;</code></td>
+                </tr>
+                <tr>
+                    <td>InputNumber&lt;TValue&gt;</td>
+                    <td><code>&lt;input type="number"&gt;</code></td>
+                </tr>
+                <tr>
+                    <td>InputRadio&lt;TValue&gt;</td>
+                    <td><code>&lt;input type="radio"&gt;</code></td>
+                </tr>
+                <tr>
+                    <td>InputRadioGroup&lt;TValue&gt;</td>
+                    <td>Group of child InputRadio&lt;TValue&gt;</td>
+                </tr>
+                <tr>
+                    <td>InputSelect&lt;TValue&gt;</td>
+                    <td><code>&lt;select&gt;</code></td>
+                </tr>
+                <tr>
+                    <td>InputText</td>
+                    <td><code>&lt;input&gt;</code></td>
+                </tr>
+                <tr>
+                    <td>InputTextArea</td>
+                    <td><code>&lt;textarea&gt;</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            The Syntax: <code>&lt;InputBase @@bind-Value="theModel.someProperty"> &lt;InputBase></code> <br />
+            <i>The components in the table are also supported outside of a form in Razor component markup. Inputs are validated when they're changed and when a form is submitted.</i><br />
+            Try this: /EditCar/{id} and look at the console.
+        </p>
+    </li>
+</ul>
